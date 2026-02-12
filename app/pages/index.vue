@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  middleware: ['admin']
+  middleware: ['redirect', 'admin']
 })
 </script>
 

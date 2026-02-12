@@ -2,11 +2,11 @@ version: '3.9'
 
 services:
   app:
-    image: nuxt-user-management
-    container_name: nuxt-user-management
+    image: app_management
+    container_name: app_management
     ports:
-      - "3000:3000"
+      - "10006:3000"
     environment:
       DATABASE_URL: postgresql://postgres:1@35.197.137.53:10000/app_management
-      BETTER_AUTH_BASE_URL: http://35.197.137.53:3000
+      BETTER_AUTH_BASE_URL: http://35.197.137.53:10006
     restart: always
