@@ -7,7 +7,18 @@ const email = ref('')
 const password = ref('')
 
 const loading = ref(false)
+
+const toast = useToast()
 async function login() {
+
+  if (!email.value || !password.value) {
+    toast.add({
+      title: 'Validation Error',
+      description: 'Email and password must be filled in',
+      color: 'warning'
+    })
+    return
+  }
 
   loading.value = true
   try {
@@ -18,10 +29,21 @@ async function login() {
         password: password.value
       }
     })
-    loading.value = false
+    toast.add({
+      title: 'Success',
+      description: 'Login Successful',
+      color: 'success'
+    })
     navigateTo("/dashboard")
   } catch (err) {
     console.log(err)
+    toast.add({
+      title: 'Login Failed',
+      description: 'Incorrect email or password',
+      color: 'warning'
+    })
+  } finally {
+    loading.value = false
   }
 }
 </script>

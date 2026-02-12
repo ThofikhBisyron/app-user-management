@@ -41,7 +41,7 @@ async function createuser() {
         toast.add({
             title: 'Success',
             description: 'User created successfully',
-            color: 'green'
+            color: 'success'
         })
 
         name.value = ''
@@ -54,7 +54,7 @@ async function createuser() {
         toast.add({
             title: 'Error',
             description: errorMessage.value,
-            color: 'red'
+            color: 'error'
         })
     } finally {
         loading.value = false
