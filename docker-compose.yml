@@ -7,6 +7,6 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DATABASE_URL: postgresql://postgres:1@172.17.0.1:10000/app_management
-      BETTER_AUTH_BASE_URL: http://localhost:3000
+      DATABASE_URL: postgresql://postgres:1@35.197.137.53:10000/app_management
+      BETTER_AUTH_BASE_URL: http://35.197.137.53:3000
     restart: always
